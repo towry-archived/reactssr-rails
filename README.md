@@ -86,7 +86,7 @@ Not tested in production environment.
 
 ## TODO
 
-[] In production env, do not run `webpackrails`
+- [ ] In production env, do not run `webpackrails`
 
 ## Development
 
