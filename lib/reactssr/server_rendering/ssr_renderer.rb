@@ -51,7 +51,6 @@ module Reactssr
       # in here.
       def before_render(component_name, props, prerender_options)
         jscode = @before_render_code.dup 
-        puts entry
         jscode << ::Rails.application.assets[entry].to_s
 
         # the result is jscode
