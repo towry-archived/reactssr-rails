@@ -84,6 +84,10 @@ module.exports = React.createClass({
 
 Not tested in production environment.
 
+## TODO
+
+[] In production env, do not run `webpackrails`
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `bin/console` for an interactive prompt that will allow you to experiment.
