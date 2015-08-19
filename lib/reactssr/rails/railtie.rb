@@ -6,10 +6,7 @@ module Reactssr
       # The folder that contains all the stuff
       config.reactssr.assets_base = 'components'
 
-      # entry js file
-      config.reactssr.entry = 'index.ssr.js'
-
-      initializer "react_rails_ssr.setup_view_helpers", group: :all do |app|
+      initializer "reactssr.setup_view_helpers", group: :all do |app|
         ActiveSupport.on_load(:action_view) do 
           include ::Reactssr::Rails::ViewHelper
         end

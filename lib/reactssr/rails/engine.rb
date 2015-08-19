@@ -2,9 +2,9 @@ module Reactssr
   module Rails
     class Engine < ::Rails::Engine 
       initializer 'reactssr.assets.precompile' do |app|
-        app.config.assets.precompile += %w(
-          components/*.ssr.js
-        )
+        base = app.config.reactssr.assets_base
+        precompile = File.join(base, '*.ssr.js')
+        app.config.assets.precompile += [precompile]
       end
     end
   end

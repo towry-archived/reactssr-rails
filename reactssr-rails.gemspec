@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["towry"]
   spec.email         = ["tovvry@gmail.com"]
 
-  spec.summary       = %q{Server render React component by view.}
+  spec.summary       = %q{React SSR in Rails}
   spec.description   = %q{Works with `react-rails` and `webpackrails` to server render react components by
 views.}
   spec.homepage      = "https://github.com/towry/reactssr-rails"
@@ -33,4 +33,5 @@ views.}
 
   # This gem depend on `react-rails`
   spec.add_dependency 'react-rails', '>= 1.1.0'
+  spec.add_dependency 'multi_json', '>= 1.0'
 end

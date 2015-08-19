@@ -8,10 +8,7 @@ module Reactssr
       def react_ssr(name, props = {}, options = {}, &block)
         options = {:tag => options} if options.is_a?(Symbol)
 
-        prerender_options = options[:prerender]
-        if !prerender_options and Rails.application.config.react.server_renderer != ::Reactssr::ServerRendering::SsrRenderer
-          return react_component(name, props, options, &block)
-        end
+        prerender_options = true
 
         # All the below stuff is to send the `controller_name`
         # and `action_name` to our ssr_renderer.
