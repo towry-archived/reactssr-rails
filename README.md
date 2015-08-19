@@ -6,6 +6,13 @@
 
 React SSR in Rails.
 
+This gem is to solve one problem, that's `react-rails` will compile all React 
+components in one file. 
+
+This gem will works well with `webpackrails` to let you use commonjs feature, 
+and only evaluate js code as few as possible, and in production environment it
+will use precompiled static file **instead of** compiling the files again and again.
+
 ## Installation
 
 Add this line to your application's Gemfile:
