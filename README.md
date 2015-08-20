@@ -56,6 +56,15 @@ up a ssr file in components named `home.ssr.js`, just like below:
 Components.IndexView = require('./IndexView.jsx');
 ```
 
+### Make events work
+
+Put this in your `application.js`: `//= require react_ssr` that below your Components.
+This scripts will remount the component on client side so the event will be working.
+
+According to React document, if remount the component on a markup that has been 
+mounted on the server side, the React will remount it in an efficient way on the
+client side.
+
 ## Example
 
 http://github.com/towry/reactssr-rails-example
