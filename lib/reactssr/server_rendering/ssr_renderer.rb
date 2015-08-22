@@ -1,6 +1,7 @@
 
 require 'multi_json'
 require 'react-rails'
+require 'yaml'
 
 module Reactssr
   module ServerRendering
@@ -139,8 +140,15 @@ module Reactssr
         if paths.any?
           path = paths.first
         else 
-          # No precompile
-          return {}
+          paths = File.join(@manifest_base, "manifest.yml")
+          if !File.exist?(paths)
+            # No precompile
+            return {}
+          end
+          
+          data = ::YAML::load(File.read(paths))
+          @data = data.is_a?(Hash) ? data : {}
+          return @data
         end
 
         begin
