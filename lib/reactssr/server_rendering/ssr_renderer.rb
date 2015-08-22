@@ -103,7 +103,8 @@ module Reactssr
 
       def entry
         components = ::Rails.application.config.reactssr.assets_base || 'components'
-        entry = File.join(components, "#{@controller_path}.ssr.js")
+        path = @controller_path.to_s.split('.').join('_')
+        entry = File.join(components, "#{path}.ssr.js")
       end
 
       private
